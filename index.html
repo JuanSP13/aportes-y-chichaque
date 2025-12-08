@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HyperLinkBlocked</title>
+</head>
+<body>
+    <h2 class="titleProyecto">Aportes y Donaciones</h2>
+    
+    <section id="donaciones">
+        <h3>Donaciones</h3>
+
+        <div style="text-align: right;">
+            <button id="donaciones_btAdd" style="font-size: 1rem">Agregar donación</button> <br><br>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <table>
+                <thead>
+                    <tr>
+                    <th style="width: 150px;">Fecha</th>
+                    <th style="width: 200px;">Descripción</th>
+                    <th style="width: 80px;">Tipo de Donación</th>
+                    <th style="width: 160px;">Monto</th>
+                    <th style="width: 100px;">Nombre</th>
+                    <th style="width: 120px;">Tipo de Donador</th>
+                    <th style="width: 150px;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="donaciones_divDonaciones"></tbody>
+            </table>
+        </div>
+            <section id="donaciones">
+        <h3>Resultados de Aportes y Donaciones</h3>
+        <div>
+            <h4 id="totalDeMateriales">Total de Materiales: </h4>
+            <h5 id="totalDeEfectivo">Total de Efectivo: </h5>
+            <h1 id="saldoFinal">Saldos finales: </h1>
+        </div>
+    </section>
+    </section>
+
+    <section id="registroDonacion" hidden>
+        <h3>Nueva Donación</h3> 
+
+            <label>Tipo de Donación:</label>
+                <select id="registroDonacion_inTipoDonacion">
+                    <option value= 1 >Efectivo</option>
+                    <option value= 2 >Material</option>
+                </select><br>
+
+            <label>Fecha: </label>
+                <input id= "registroDonacion_inFecha" type="date" name=fecha required><br>
+            <label>Descripción:</label>
+                <input id= "registroDonacion_inDescripcion" type="text" name="descripcion" minlength=1 maxlength="30" required placeholder="Ej. Pago de servicios"><br>
+
+            <label>Nombre:</label>
+                <input id="registroDonacion_inNombre" type="text" name=nombre minlength=1 maxlength=3 required placeholder="Ej.001"><br>
+
+            <label>Tipo de Donador:</label>
+                <select id= "registroDonacion_inTipoDonador" type="text" name="tipoDonador" required>
+                    <option value= 1 >Natural</option>
+                    <option value= 2 >Jurídico</option>
+                </select><br>
+
+            <label>Monto:</label>
+            <input id="registroDonacion_inMonto" type="number" min= "0" name=monto step="0.01" required>
+            <br><br>
+        <button id="registroDonacion_btGuardar">Guardar</button>
+        <button id="registroDonacion_btVolver">Volver</button>
+    </section>
+
+    <section id="editDonacion" hidden>
+        <h3>Editar Donación</h3>
+            <input id="editDonacion_inNombreHidden" type="hidden">
+
+            <label>Tipo de Donación:</label>
+                <select id="editDonacion_inTipoDonacion">
+                    <option value= 1 >Efectivo</option>
+                    <option value= 2 >Material</option>
+                </select><br>
+
+            <label>Fecha: </label>
+                <input id= "editDonacion_inFecha" type="date" name=fecha required><br>
+
+            <label>Descripcion:</label>
+                <input id= "editDonacion_inDescripcion" type="text" name="descripcion" minlength=1 maxlength="30" required placeholder="Ej. Pago de servicios"><br>
+
+            <label>Nombre:</label>
+                <input id="editDonacion_inNombre" type="text" name=nombre minlength=3 maxlength=3 required placeholder="Ej. TRX-002"><br>
+
+            <label>Tipo de Donador:</label>
+                <select id= "editDonacion_inTipoDonador" type="text" name="tipoDonador" required>
+                    <option value= 1 >Natural</option>
+                    <option value= 2 >Jurídico</option>
+                </select><br>
+
+            <label>Monto:</label>
+            <input id="editDonacion_inMonto" type="number" name=monto step="0.01" required><br><br>
+
+        <button id="editDonacion_btGuardar">Guardar</button>
+        <button id="editDonacion_btCancelar">Cancelar</button>
+    </section>
+
+    
+<script>
+(function(){ //Metodos de clase grande y actualizacion constante de sus datos.
+    const STORAGE_KEY = "Aportes_y_Donaciones_data";
+
+    function leerDonaciones() {
+    const data = localStorage.getItem(STORAGE_KEY);
+    if (!data) return [];
+    try {
+        return JSON.parse(data);
+    } catch (e) {
+        console.error("Error parseando donaciones desde localStorage", e);
+        return [];
+    }
+}
+
+  function calcularTotales(donaciones) {
+    let totalEfectivo = 0;
+    let totalMateriales = 0;
+    for (const t of donaciones) {
+      const monto = Number(t.monto) || 0;
+      const tipo = Number(t.tipoDonacion) || 0;
+      if (tipo === 1) totalEfectivo -= monto; // Efectivo
+      else if (tipo === 2) totalMateriales += monto; // Material
+    }
+    return { totalEfectivo, totalMateriales, saldoFinal: totalMateriales + totalEfectivo };
+  }
+
+  function formatear(n) { return Number(n).toFixed(2); }
+
+  function actualizarDOM() {
+    const trans = leerDonaciones();
+    const tot = calcularTotales(trans);
+
+    const elEfectivo = document.getElementById("totalDeEfectivo");
+    const elMateriales = document.getElementById("totalDeMateriales");
+    const elSaldo = document.getElementById("saldoFinal");
+
+    if (elEfectivo) elEfectivo.textContent = `Total de efectivo: ${formatear(tot.totalEfectivo)}`;
+    if (elMateriales) elMateriales.textContent = `Total de materiales: ${formatear(tot.totalMateriales)}`;
+    if (elSaldo)  elSaldo.textContent  = `Saldos finales: ${formatear(tot.saldoFinal)}`;
+  }
+
+  // Observador para detectar cambios en la tabla de donaciones y actualizar totales
+  function observarTabla() {
+    const tbody = document.getElementById("donaciones_divDonaciones");
+    if (!tbody) return;
+    const observer = new MutationObserver(() => {
+      // pequeña demora para permitir que Cl_vBanco actualice innerHTML completamente
+      setTimeout(actualizarDOM, 0);
+    });
+    observer.observe(tbody, { childList: true, subtree: true, characterData: true });
+  }
+
+  // Inicializar
+  document.addEventListener("DOMContentLoaded", () => {
+    // actualizar al inicio
+    actualizarDOM();
+    // observar cambios en la tabla producidos por la app
+    observarTabla();
+    // fallback: si algo no detecta el cambio, re-evaluar cada 1s (opcional, puedes reducir o quitar)
+    setInterval(actualizarDOM, 1000);
+  });
+})();
+</script>
+
+
+
+
+    <script type="module">
+        import Cl_index from "./dist/Cl_index.js";
+        new Cl_index();
+    </script>
+</body>
+</html>
