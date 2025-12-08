@@ -20,8 +20,8 @@ export default class Cl_vOrganizacion extends Cl_vGeneral {
                 <td>${trans.fecha}</td>
                 <td>${trans.descripcion}</td>
                 <td>${trans.tipoDonacion === 1 ? "Efectivo" : "Material"}</td>
-                <td class= "${trans.tipoDonacion === 1 ? "negative-amount" : "positive-amount"}">${trans.tipoDonacion === 1 ? (trans.monto * -1).toFixed(2) : trans.monto.toFixed(2)}</td>
-                <td>${trans.tipoDonacion === 1 ? "TRX-" + trans.nombre : "DEP-" + trans.nombre}</td>
+                <td class= "positive-amount"}">${trans.monto.toFixed(2)}</td>
+                <td>${trans.nombre}</td>
                 <td>${trans.tipoDonadorTexto()}</td>
                 <td>
                     <button class="btDetails" data-ref="${trans.nombre}" title="Detalles de la Donacion" style=" font-size: 1rem; color:black; background:black; border:2px solid black; padding:3px;">❔</button>
