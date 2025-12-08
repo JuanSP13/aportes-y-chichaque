@@ -32,10 +32,6 @@ export default class vDonacion extends Cl_vGeneral {
             alert("El monto debe ser mayor a 0.");
             return;
         }
-        if (this.inNombre.value.length !== 4) {
-            alert("El nombre debe tener 4 letras.");
-            return;
-        }
         const data = {
             fecha: this.inFecha.value,
             descripcion: this.inDescripcion.value.toLowerCase(),
