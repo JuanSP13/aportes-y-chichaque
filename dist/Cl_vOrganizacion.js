@@ -20,7 +20,7 @@ export default class Cl_vOrganizacion extends Cl_vGeneral {
                 <td>${dona.fecha}</td>
                 <td>${dona.descripcion}</td>
                 <td>${dona.tipoDonacion === 1 ? "Efectivo" : "Material"}</td>
-                <td class= "positive-amount"}">${dona.monto.toFixed(2)}</td>
+                <td class= "${dona.monto ? "positive-amount " : "negative-amount"}">${dona.monto ? dona.monto.toFixed(2) : "--"}</td>
                 <td>${dona.nombre}</td>
                 <td>${dona.tipoDonadorTexto()}</td>
                 <td>
