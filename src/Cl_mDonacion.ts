@@ -3,8 +3,8 @@ export interface iDonacion{
     descripcion: string;
     monto: number;
     nombre: string;
-    tipoDonacion: number;
-    tipoDonador: number; //1 para Natural
+    tipoDonacion: number; //1 para Efectivo, 2 para Material
+    tipoDonador: number; //1 para Natural, 2 para Jurídico
 }
 
 export default class Cl_mDonacion{

@@ -3,7 +3,7 @@ import Cl_mOrganizacion from "./Cl_mOrganizacion.js";
 import Cl_vOrganizacion from "./Cl_vOrganizacion.js";
 import Cl_vDonacion from "./Cl_vDonacion.js";
 import Cl_vEditDonacion from "./Cl_vEditDonacion.js";
-//import {dtDonaciones} from "./Cl_controlador.js";(PARA LA DATA QUE PASO GIOVANNI)
+import {dtDonaciones} from "./data/dtDonaciones.js";
 
 export default class Cl_index {
   constructor() {
@@ -18,9 +18,9 @@ export default class Cl_index {
         modelo, vista, vDonacion, vEditDonacion
     );
     //dataDonaciones (PARA LA DATA QUE PASO GIOVANNI) (ARREGLAR DESPUES DE PROBAR EL CODIGO)
-     /*dtDonaciones.forEach((donacion) => {
+     dtDonaciones.forEach((donacion) => {
     modelo.procesarDonacion(donacion);
-  })*/
+  })
     
     vista.controlador = controlador;
     vDonacion.controlador = controlador;
