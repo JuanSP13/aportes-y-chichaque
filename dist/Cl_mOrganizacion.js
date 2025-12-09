@@ -2,9 +2,15 @@ import Cl_mDonacion from "./Cl_mDonacion.js";
 export default class Cl_mOrganizacion {
     donaciones = [];
     STORAGE_KEY = "Movimientos_Bancarios_data";
-    //Atributos derivados para los métodos de Aportes y Donaciones (revision)
+    //Atributos derivados para los metodos de Aportes y Donaciones (en revision)
     acmMontoEfectivo = 0;
     acmMontoMaterial = 0;
+    //Métodos por Tipo Donador
+    cntDonaciones = 0;
+    tipoDonador1 = 0; // Natural
+    tipoDonador2 = 0; // Juridico
+    cntTipoDonador1 = 0;
+    cntTipoDonador2 = 0;
     constructor() {
         this.cargar();
     }

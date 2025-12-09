@@ -27,6 +27,7 @@ export default class vDonacion extends Cl_vGeneral {
         });
     }
 
+
     private guardar(){ //ARREGLADO
         if (!this.inFecha.value || !this.inDescripcion.value || !this.inMonto.value || !this.inNombre.value || !this.inTipoDonacion.value || !this.inTipoDonador.value){ 
             alert("Debes llenar todos los campos.");

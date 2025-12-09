@@ -19,19 +19,19 @@ export default class Cl_vOrganizacion extends Cl_vGeneral {
 
         const donaciones = this.controlador.dtDonaciones;
 
-        donaciones.forEach((trans: any) => {
+        donaciones.forEach((dona: any) => {
             htmlTable += `
             <tr>
-                <td>${trans.fecha}</td>
-                <td>${trans.descripcion}</td>
-                <td>${trans.tipoDonacion === 1 ? "Efectivo" : "Material"}</td>
-                <td class= "${trans.monto ? "positive-amount " : "negative-amount"}">${trans.monto ? trans.monto.toFixed(2) : "--"}</td>
-                <td>${trans.nombre}</td>
-                <td>${trans.tipoDonadorTexto()}</td>
+                <td>${dona.fecha}</td>
+                <td>${dona.descripcion}</td>
+                <td>${dona.tipoDonacion === 1 ? "Efectivo" : "Material"}</td>
+                <td class= "positive-amount"}">${dona.monto.toFixed(2)}</td>
+                <td>${dona.nombre}</td>
+                <td>${dona.tipoDonadorTexto()}</td>
                 <td>
-                    <button class="btDetails" data-ref="${trans.nombre}" title="Detalles de la Donacion" style=" font-size: 1rem; color:black; background:black; border:2px solid black; padding:3px;">❔</button>
-                    <button class="btEdit" data-ref="${trans.nombre}" title="Editar Donacion" style=" font-size: 1rem; color:black; background:black; border:2px solid black; padding:3px;">⚙️</button>
-                    <button class="btDelete" data-ref="${trans.nombre}" title="Eliminar Donacion" style=" font-size: 1rem; color:red; background:red; border:2px solid black; padding:3px;">🗑️</button>
+                    <button class="btDetails" data-ref="${dona.nombre}" title="Detalles de la Donacion" style=" font-size: 1rem; color:black; background:black; border:2px solid black; padding:3px;">❔</button>
+                    <button class="btEdit" data-ref="${dona.nombre}" title="Editar Donacion" style=" font-size: 1rem; color:black; background:black; border:2px solid black; padding:3px;">⚙️</button>
+                    <button class="btDelete" data-ref="${dona.nombre}" title="Eliminar Donacion" style=" font-size: 1rem; color:red; background:red; border:2px solid black; padding:3px;">🗑️</button>
                 </td>
             </tr>`;
         });
@@ -61,7 +61,7 @@ export default class Cl_vOrganizacion extends Cl_vGeneral {
         this.divDonaciones.querySelectorAll(".btDelete").forEach((del) => {
             (del as HTMLElement).onclick = () => {
                 const ref = (del as HTMLElement).dataset.ref;
-                if(ref) this.controlador?.deleteTrans(ref);
+                if(ref) this.controlador?.deleteDona(ref);
             };
         });
     }

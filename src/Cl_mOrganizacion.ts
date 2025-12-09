@@ -3,9 +3,16 @@ import Cl_mDonacion, { iDonacion } from "./Cl_mDonacion.js";
 export default class Cl_mOrganizacion {
     private donaciones: Cl_mDonacion[] = [];
     private readonly STORAGE_KEY = "Movimientos_Bancarios_data";
-    //Atributos derivados para los métodos de Aportes y Donaciones (revision)
+    //Atributos derivados para los metodos de Aportes y Donaciones (en revision)
     private acmMontoEfectivo: number = 0;
     private acmMontoMaterial: number = 0; 
+    //Métodos por Tipo Donador
+    private cntDonaciones: number = 0;
+    private tipoDonador1: number = 0; // Natural
+    private tipoDonador2: number = 0; // Juridico
+    private cntTipoDonador1: number = 0;
+    private cntTipoDonador2: number = 0;
+
 
     constructor() {
         this.cargar();
@@ -64,5 +71,47 @@ export default class Cl_mOrganizacion {
     get dtDonaciones(): Cl_mDonacion[] {
         return this.donaciones;
     }
-        
+    
+     //Metodos 
+     /*   public resumen(donaciones: Cl_mDonacion[]): { totalEfectivo: number; totalMaterial: number; saldoFinal:number }{
+        for (let d of donaciones) {
+            if (d.tipoTransaccion === 1) {
+                this.acmMontoEfectivo += d.monto;
+            } else if (d.tipoTransaccion === 2) {
+                this.acmMontoMaterial += d.monto;
+            }
+        }
+        return { totalEfectivo: this.acmMontoEfectivo, totalMaterial: this.acmMontoMaterial, saldoFinal: this.acmMontoEfectivo + this.acmMontoMaterial };    
+    }
+
+        public desgloseTipoDonador(donaciones: Cl_mDonacion[]): { 
+    natural: number; 
+    juridico: number;  
+    pNatural: number;
+    pJuridico: number; 
+} {
+    let natural = 0;
+    let juridico = 0;
+    let pNatural = 0;
+    let pJuridico = 0;
+
+    for (let d of donaciones) {
+        if (d.tipoDonador === 1) {
+            natural += d.monto;
+            cntTipoDonador1++;
+        } else if (d.tipoDonador === 2) {
+            juridico += d.monto;
+            cntTipoDonador2++;
+        }
+    }
+    pNatural = this.cntTipoDonador1 / this.cntDonaciones;
+    pJuridico = this.cntTipoDonador2 / this.cntDonaciones;
+    return { 
+        natural, 
+        juridico, 
+        pNatural,
+        pJuridico, 
+
+    };
+}*/
 }

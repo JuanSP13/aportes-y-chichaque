@@ -13,22 +13,22 @@ export default class Cl_controlador {
         this.mOrganizacion.procesarDonacion(data);
         this.mostrarVista("donaciones");
     }
-    deleteTrans(nombre) {
+    deleteDona(nombre) {
         if (confirm(`¿Está seguro de eliminar la donación de ${nombre}?`)) {
             this.mOrganizacion.deleteDonacion(nombre);
             this.vOrganizacion.refreshTable();
         }
     }
     vDetails(nombre) {
-        const trans = this.mOrganizacion.getDonacion(nombre);
-        if (trans) {
-            alert(JSON.stringify(trans.toJSON(), null, 2));
+        const dona = this.mOrganizacion.getDonacion(nombre);
+        if (dona) {
+            alert(JSON.stringify(dona.toJSON(), null, 2));
         }
     }
     vEdit(nombre) {
-        const trans = this.mOrganizacion.getDonacion(nombre);
-        if (trans && this.vEditDonacion) {
-            this.vEditDonacion.cargarDatos(trans.toJSON());
+        const dona = this.mOrganizacion.getDonacion(nombre);
+        if (dona && this.vEditDonacion) {
+            this.vEditDonacion.cargarDatos(dona.toJSON());
             this.mostrarVista("editDonacion");
         }
     }

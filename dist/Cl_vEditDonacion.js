@@ -24,14 +24,14 @@ export default class Cl_vEditDonacion extends Cl_vGeneral {
             onclick: () => this.cancelar()
         });
     }
-    cargarDatos(trans) {
-        this.editingNombre = trans.nombre;
-        this.inFecha.value = trans.fecha;
-        this.inDescripcion.value = trans.descripcion;
-        this.inMonto.value = trans.monto.toString();
-        this.inNombre.value = trans.nombre;
-        this.inTipoDonacion.value = trans.tipoDonacion.toString();
-        this.inTipoDonador.value = trans.tipoDonador.toString();
+    cargarDatos(dona) {
+        this.editingNombre = dona.nombre;
+        this.inFecha.value = dona.fecha;
+        this.inDescripcion.value = dona.descripcion;
+        this.inMonto.value = dona.monto.toString();
+        this.inNombre.value = dona.nombre;
+        this.inTipoDonacion.value = dona.tipoDonacion.toString();
+        this.inTipoDonador.value = dona.tipoDonador.toString();
         this.inNombre.disabled = true;
     }
     guardar() {
