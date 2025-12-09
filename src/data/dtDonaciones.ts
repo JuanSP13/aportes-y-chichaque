@@ -1,179 +1,338 @@
-[
-{
+export const dtDonaciones = [
+    {
+    fecha: "2025-01-15",
+    tipoDonacion: 1,
+    descripcion: "Donación general para laboratorios",
+    monto: 25000,
+    nombre: "Juan Carlos Rodríguez",
+    tipoDonacion_donador: 1
+    },
+    {
+    fecha: "2025-01-20",
     tipoDonacion: 2,
-    fecha: "01/11/2025",
-    descripcion: "Depósito de Nómina",
-    nombre: "001",
-    tipoDonador: 1,
-    monto: 3500.00
-},
-{
+    descripcion: "5 computadoras de escritorio",
+    monto: null,
+    nombre: "Empresa TechSoluciones",
+    tipoDonacion_donador: 2
+    },
+    {
+    fecha: "2025-02-03",
     tipoDonacion: 1,
-    fecha: "02/11/2025",
-    descripcion: "Mercado Frescos S.A.",
-    nombre: "002",
-    tipoDonador: 2,
-    monto: 125.50,
-},
-{
+    descripcion: "Fondo para equipamiento",
+    monto: 50000,
+    nombre: "María González López",
+    tipoDonacion_donador: 1
+    },
+    {
+    fecha: "2025-02-10",
+    tipoDonacion: 2,
+    descripcion: "Microscopios (x3) para biología",
+    monto: null,
+    nombre: "Lab Instrumentos C.A.",
+    tipoDonador: 2
+    },
+    {
+    fecha: "2025-02-15",
     tipoDonacion: 1,
-    fecha: "02/11/2025",
-    descripcion: "MOVISTAR - Teléfono",
-    nombre: "003",
-    tipoDonador: 5,
-    monto: 89.99,
+    descripcion: "Donación para mantenimiento",
+    monto: 15000,
+    nombre: "Carlos Alberto Peña",
+    tipoDonador: 1
+    },
+    {
+    fecha: "2025-03-01",
+    tipoDonacion: 2,
+    descripcion: "Materiales de laboratorio surtido",
+    monto: null,
+    nombre: "Química Industrial S.A.",
+    tipoDonador: 2
+    },
+    {
+    fecha: "2025-03-08",
+    tipoDonacion: 1,
+    descripcion: "Apoyo infraestructura",
+    monto: 35000,
+    nombre: "Gabriela Martínez Silva",
+    tipoDonador: 1
+    },
+    {
+    fecha: "2025-03-15",
+    tipoDonacion: 2,
+    descripcion: "10 escritorios de metal",
+    monto: null,
+    nombre: "Muebles Universitarios",
+    tipoDonador: 2
+    },
+    {
 
-},
-{
+    fecha: "2025-03-22",
     tipoDonacion: 1,
-    fecha: "03/11/2025",
-    descripcion: "Tienda Liverpool - Ropa",
-    nombre: "004",
-    tipoDonador: 4,
-    monto: 450.00,
-},
-{
-    tipoDonacion: 1,
-    fecha: "04/11/2025",
-    descripcion: "UBER",
-    nombre: "005",
-    tipoDonador: 5,
-    monto: 48.25,
-},
-{
-    tipoDonacion: 1,
-    fecha: "05/11/2025",
-    descripcion: "Cine Cinépolis",
-    nombre: "006",
-    tipoDonador: 6,
-    monto: 180.00,
-},
-{
+    descripcion: "Fondo especial educativo",
+    monto: 20000,
+    nombre: "Roberto Sánchez Díaz",
+    tipoDonador: 1
+    },
+    {
+    fecha: "2025-04-05",
     tipoDonacion: 2,
-    fecha: "05/11/2025",
-    descripcion: "Depósito Cliente XYZ",
-    nombre: "002",
-    tipoDonador: 1,
-    monto: 2000.00
-},
-{
+    descripcion: "Software educativo completo",
+    monto: null,
+    nombre: "Microsoft Educación",
+    tipoDonador: 2
+    },
+    {
+    fecha: "2025-04-12",
     tipoDonacion: 1,
-    fecha: "06/11/2025",
-    descripcion: "Universidad - Matrícula",
-    nombre: "007",
-    tipoDonador: 7,
-    monto: 1200.00,
-},
-{
-    tipoDonacion: 1,
-    fecha: "07/11/2025",
-    descripcion: "Farmacia Guadalajara",
-    nombre: "008",
-    tipoDonador: 3,
-    monto: 156.75,
-},
-{
-    tipoDonacion: 1,
-    fecha: "08/11/2025",
-    descripcion: "Gasolinera PEMEX",
-    nombre: "009",
-    tipoDonador: 5,
-    monto: 600.00,
-},
-{
-    tipoDonacion: 1,
-    fecha: "09/11/2025",
-    descripcion: "Amazon - Compra Online",
-    nombre: "010",
-    tipoDonador: 6,
-    monto: 299.99,
-},
-{
-    tipoDonacion: 1,
-    fecha: "10/11/2025",
-    descripcion: "Pago de Renta - Apto",
-    nombre: "011",
-    tipoDonador: 8,
-    monto: 3000.00,
-},
-{
+    descripcion: "Donación anual",
+    monto: 30000,
+    nombre: "Ana Rodríguez Flores",
+    tipoDonador: 1
+    },
+    {
+    fecha: "2025-04-20",
     tipoDonacion: 2,
-    fecha: "11/11/2025",
-    descripcion: "Depósito de Freelance",
-    nombre: "003",
-    tipoDonador: 1,
-    monto: 1500.00
-},
-{
+    descripcion: "Equipos de medición (x5)",
+    monto: null,
+    nombre: "Instrumentación Técnica",
+    tipoDonador: 2
+    },
+    {
+    fecha: "2025-05-02",
     tipoDonacion: 1,
-    fecha: "12/11/2025",
-    descripcion: "Walmart - Abarrotes",
-    nombre: "012",
-    tipoDonador: 2,
-    monto: 278.50,
-},
-{
-    tipoDonacion: 1,
-    fecha: "13/11/2025",
-    descripcion: "Comisión Bancaria",
-    nombre: "013",
-    tipoDonador: 5,
-    monto: 50.00,
-},
-{
-    tipoDonacion: 1,
-    fecha: "14/11/2025",
-    descripcion: "Restaurante La Trattoria",
-    nombre: "014",
-    tipoDonador: 2,
-    monto: 385.00,
-},
-{
-    tipoDonacion: 1,
-    fecha: "15/11/2025",
-    descripcion: "Netflix Suscripción",
-    nombre: "015",
-    tipoDonador: 6,
-    monto: 199.00,
-},
-{
-    tipoDonacion: 1,
-    fecha: "16/11/2025",
-    descripcion: "Coppel - Electrodoméstico",
-    nombre: "016",
-    tipoDonador: 8,
-    monto: 2500.00,
-},
-{
+    descripcion: "Reparaciones y mejoras",
+    monto: 18500,
+    nombre: "Pedro Luis Gutiérrez",
+    tipoDonador: 1
+    },
+    {
+
+    fecha: "2025-05-10",
     tipoDonacion: 2,
-    fecha: "19/11/2025",
-    descripcion: "Transferencia Familia",
-    nombre: "004",
-    tipoDonador: 1,
-    monto: 500.00
-},
-{
+    descripcion: "Proyector interactivo de alta definición",
+    monto: null,
+    nombre: "Tecnología Educativa Plus",
+    tipoDonador: 2
+    },
+    {
+
+    fecha: "2025-05-18",
     tipoDonacion: 1,
-    fecha: "20/11/2025",
-    descripcion: "Dentista Clínica Plus",
-    nombre: "017",
-    tipoDonador: 3,
-    monto: 850.00,
-},
-{
+    descripcion: "Becas y apoyo estudiantil",
+    monto: 40000,
+    nombre: "Daniela Cabrera Ramos",
+    tipoDonador: 1
+    },
+    {
+
+    fecha: "2025-06-01",
+    tipoDonacion: 2,
+    descripcion: "Aire acondicionado (x2) y unidades",
+    monto: null,
+    nombre: "Climatización Integral",
+    tipoDonador: 2
+    },
+    {
+
+    fecha: "2025-06-08",
     tipoDonacion: 1,
-    fecha: "22/11/2025",
-    descripcion: "Yoga Classes - Mensual",
-    nombre: "018",
-    tipoDonador: 6,
-    monto: 400.00,
-},
-{
+    descripcion: "Compra de libros y material académico",
+    monto: 22000,
+    nombre: "Francisco Jiménez López",
+    tipoDonador: 1
+    },
+    {
+
+    fecha: "2025-06-15",
+    tipoDonacion: 2,
+    descripcion: "Sistema de iluminación LED",
+    monto: null,
+    nombre: "Soluciones Luminotecnia",
+    tipoDonador: 2
+    },
+    {
+
+    fecha: "2025-06-25",
     tipoDonacion: 1,
-    fecha: "25/11/2025",
-    descripcion: "Soriana - Supermercado",
-    nombre: "019",
-    tipoDonador: 2,
-    monto: 520.75,
-}
-]
+    descripcion: "Fondo de investigación",
+    monto: 45000,
+    nombre: "Luz Marina Ortega",
+    tipoDonador: 1
+    },
+    {
+
+    fecha: "2025-07-05",
+    tipoDonacion: 2,
+    descripcion: "Reactivos químicos surtidos",
+    monto: null,
+    nombre: "Suministros Químicos Caribe",
+    tipoDonador: 2
+    },
+    {
+    fecha: "2025-07-12",
+    tipoDonacion: 1,
+    descripcion: "Mejora de infraestructura",
+    monto: 28000,
+    nombre: "Víctor Manuel Cordero",
+    tipoDonador: 1
+    },
+    {
+    fecha: "2025-07-20",
+    tipoDonacion: 2,
+    descripcion: "Estanterías metálicas resistentes (x10)",
+    monto: null,
+    nombre: "Soluciones Industriales",
+    tipoDonador: 2
+    },
+    {
+    fecha: "2025-08-02",
+    tipoDonacion: 1,
+    descripcion: "Donación puntual",
+    monto: 16500,
+    nombre: "Susana Alejandra Ruiz",
+    tipoDonador: 1
+    },
+    {
+
+    fecha: "2025-08-10",
+    tipoDonacion: 2,
+    descripcion: "Materiales de construcción para ampliación",
+    monto: null,
+    nombre: "Distribuidora de Materiales",
+    tipoDonador: 2
+    },
+    {
+    fecha: "2025-08-18",
+    tipoDonacion: 1,
+    descripcion: "Apoyo financiero especial",
+    monto: 32000,
+    nombre: "Marcelo Rodríguez Vega",
+    tipoDonador: 1
+    },
+    {
+    fecha: "2025-09-01",
+    tipoDonacion: 2,
+    descripcion: "Equipos de laboratorio de física",
+    monto: null,
+    nombre: "Instrumentos de Precisión",
+    tipoDonador: 2
+    },
+    {
+    fecha: "2025-09-08",
+    tipoDonacion: 1,
+    descripcion: "Fondo complementario",
+    monto: 24000,
+    nombre: "Valentina Molina Gómez",
+    tipoDonador: 1
+    },
+    {
+
+    fecha: "2025-09-15",
+    tipoDonacion: 2,
+    descripcion: "Sillas ergonómicas estudiantes (x20)",
+    monto: null,
+    nombre: "Muebles Ergonomía Total",
+    tipoDonador: 2
+    },
+    {
+    fecha: "2025-09-25",
+    tipoDonacion: 1,
+    descripcion: "Donación para operaciones",
+    monto: 38000,
+    nombre: "Guillermo Torres Navarro",
+    tipoDonador: 1
+    },
+    {
+    fecha: "2025-10-03",
+    tipoDonacion: 2,
+    descripcion: "Tornillería y accesorios variados",
+    monto: null,
+    nombre: "Ferretería Industrial",
+    tipoDonador: 2
+    },
+    {
+    fecha: "2025-10-10",
+    tipoDonacion: 1,
+    descripcion: "Apoyo para equipamiento",
+    monto: 21000,
+    nombre: "Patricia Hernández Ruiz",
+    tipoDonador: 1
+    },
+    {
+    fecha: "2025-10-18",
+    tipoDonacion: 2,
+    descripcion: "Pizarras inteligentes digitales (x3)",
+    monto: null,
+    nombre: "Educación Digital Avanzada",
+    tipoDonador: 2
+    },
+    {
+    fecha: "2025-10-28",
+    tipoDonacion: 1,
+    descripcion: "Fondo institucional",
+    monto: 33000,
+    nombre: "Sergio Alejandro Pérez",
+    tipoDonador: 1
+    },
+    {
+
+    fecha: "2025-11-05",
+    tipoDonacion: 2,
+    descripcion: "Cableado estructurado de red",
+    monto: null,
+    nombre: "Infraestructura TI Profesional",
+    tipoDonador: 2
+    },
+    {
+    fecha: "2025-11-12",
+    tipoDonacion: 1,
+    descripcion: "Donación final trimestre",
+    monto: 26500,
+    nombre: "Ileana del Carmen López",
+    tipoDonador: 1
+    },
+    {
+
+    fecha: "2025-11-18",
+    tipoDonacion: 2,
+    descripcion: "Equipos de protección personal (EPP)",
+    monto: null,
+    nombre: "Seguridad Industrial Integral",
+    tipoDonador: 2
+    },
+    {
+
+    fecha: "2025-11-23",
+    tipoDonacion: 1,
+    descripcion: "Aporte extraordinario",
+    monto: 42000,
+    nombre: "Rodolfo Santiago Blanco",
+    tipoDonador: 1
+    },
+    {
+
+    fecha: "2025-11-25",
+    tipoDonacion: 2,
+    descripcion: "Plantas ornamentales y jardinería",
+    monto: null,
+    nombre: "Paisajismo y Decoración",
+    tipoDonador: 2
+    },
+    {
+
+    fecha: "2025-11-26",
+    tipoDonacion: 1,
+    descripcion: "Donación solidaria",
+    monto: 19000,
+    nombre: "Catalina Rosa Vargas",
+    tipoDonador: 1
+    },
+    {
+
+    fecha: "2025-11-27",
+    tipoDonacion: 2,
+    descripcion: "Cajas de archivos metálicas (x15)",
+    monto: null,
+    nombre: "Mobiliario Moderno",
+    tipoDonador: 2
+    }
+    ]

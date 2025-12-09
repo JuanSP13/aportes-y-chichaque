@@ -2,10 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>HyperLinkBlocked</title>
 </head>
+
 <body>
     <h2 class="titleProyecto">Aportes y Donaciones</h2>
     
@@ -54,7 +55,7 @@
             <label>Fecha: </label>
                 <input id= "registroDonacion_inFecha" type="date" name=fecha required><br>
             <label>Descripción:</label>
-                <input id= "registroDonacion_inDescripcion" type="text" name="descripcion" minlength=1 maxlength="30" required placeholder="Ej. Apoyo monetario"><br>
+                <input id= "registroDonacion_inDescripcion" type="text" name="descripcion" minlength=1 maxlength="50" required placeholder="Ej. Apoyo monetario"><br>
 
             <label>Nombre:</label>
                 <input id="registroDonacion_inNombre" type="text" name=nombre minlength=1 maxlength=30 required placeholder="Ej. Bryan"><br>
@@ -86,7 +87,7 @@
                 <input id= "editDonacion_inFecha" type="date" name=fecha required><br>
 
             <label>Descripcion:</label>
-                <input id= "editDonacion_inDescripcion" type="text" name="descripcion" minlength=1 maxlength="30" required placeholder="Ej. Apoyo monetario"><br>
+                <input id= "editDonacion_inDescripcion" type="text" name="descripcion" minlength=1 maxlength="50" required placeholder="Ej. Apoyo monetario"><br>
 
             <label>Nombre:</label>
                 <input id="editDonacion_inNombre" type="text" name=nombre minlength=1 maxlength=30 required placeholder="Ej. Bryan"><br>
@@ -135,8 +136,8 @@
   function formatear(n) { return Number(n).toFixed(2); }
 
   function actualizarDOM() {
-    const trans = leerDonaciones();
-    const tot = calcularTotales(trans);
+    const dona = leerDonaciones();
+    const tot = calcularTotales(dona);
 
     const elEfectivo = document.getElementById("totalDeEfectivo");
     const elMateriales = document.getElementById("totalDeMateriales");

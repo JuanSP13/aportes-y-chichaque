@@ -27,24 +27,24 @@ export default class Cl_controlador {
         this.mostrarVista("donaciones");
     }
 
-    public deleteTrans(nombre: string) {
+    public deleteDona(nombre: string) {
         if (confirm(`¿Está seguro de eliminar la donación de ${nombre}?`)) {
             this.mOrganizacion.deleteDonacion(nombre);
             this.vOrganizacion.refreshTable();
         }
     }
 
-    public vDetails(nombre: string) { //Para despues
-    const trans = this.mOrganizacion.getDonacion(nombre);
-    if (trans) {
-        alert(JSON.stringify(trans.toJSON(), null, 2));
+    public vDetails(nombre: string) {
+    const dona = this.mOrganizacion.getDonacion(nombre);
+    if (dona) {
+        alert(JSON.stringify(dona.toJSON(), null, 2));
     }
 }
 
     public vEdit(nombre: string) {
-        const trans = this.mOrganizacion.getDonacion(nombre);
-        if (trans && this.vEditDonacion) {
-            this.vEditDonacion.cargarDatos(trans.toJSON());
+        const dona = this.mOrganizacion.getDonacion(nombre);
+        if (dona && this.vEditDonacion) {
+            this.vEditDonacion.cargarDatos(dona.toJSON());
             this.mostrarVista("editDonacion");
         }
     }
@@ -65,7 +65,7 @@ export default class Cl_controlador {
         }
     }
     
-    get dtDonaciones() {
+    public get dtDonaciones() {
         return this.mOrganizacion.dtDonaciones;
     }
 }
